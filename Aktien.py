@@ -4,9 +4,9 @@ from datetime import date
 import yfinance as yf
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
-import matplotlib.dates as mdates
-from matplotlib.ticker import FuncFormatter
+# import numpy as np
+# import matplotlib.dates as mdates
+# from matplotlib.ticker import FuncFormatter
 
 today = date.today().strftime("%d.%m.%Y")
 minticks = 5
@@ -48,20 +48,20 @@ dict_Depot_name = {
     "XY6.DE": "Xylem"  ## Xylem
 }
 
-print(dict_Depot_EP["5"])
-print(dict_Depot["2"])
+# print(dict_Depot_EP["5"])
+# print(dict_Depot["2"])
 
 
 def create_df(i):
     # initialize parameters
     start_date = datetime(2021, 6, 1)
-    end_date = datetime(2021, 7, 5)
+    end_date = datetime(2021, 7, 8)
     name_aktie = str(dict_Depot[i])
     name_aktie_depot = str(dict_Depot_name[name_aktie])
     # get the data
     df = yf.download(name_aktie, start=start_date, end=end_date)
     df = df.reset_index(level=0)
-    #     df.index=list(range(0, len(df["Low"])))
+    df.index=list(range(0, len(df["Low"])))
     df["EP"] = float(dict_Depot_EP[i])
     df['Date'] = pd.to_datetime(df['Date'], utc=True)
     win_loss = round(df["Low"].iloc[-1] - df["EP"].max(), 2)
@@ -97,7 +97,6 @@ def chart(df, name_aktie, name_aktie_depot, win_loss):
     plt.ylabel('Wert [€]', fontsize=size)
     plt.xlabel('Zeit', fontsize=size)
     plt.savefig(f'D:\\Github\\Aktien\\Output\\{name_aktie_depot}.png', dpi=100, bbox_inches='tight')
-
 
 for i in dict_Depot:
     create_df(i)
