@@ -151,5 +151,4 @@ plt.yticks(fontsize=15)
 plt.ylabel("Euro", fontsize=25)
 plt.xlabel("Zeit", fontsize=25)
 
-
 plt.savefig(f'D:\\Github\\Aktien\\Output\\{today} {aktie}.png', dpi=300, bbox_inches='tight')
