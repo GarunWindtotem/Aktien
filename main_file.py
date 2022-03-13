@@ -1,11 +1,11 @@
-# from rechenarten import *
-
-from rechenarten import addieren as ad
-from rechenarten import subtrahieren as su
+from rechenarten import *
 
 a = 2
 b = 1
 
-print(ad(a,b))
-print(su(a,b))
+print(addieren(a,b))
+print(subtrahieren(a,b))
 
+
+# from rechenarten import addieren as ad
+# from rechenarten import subtrahieren as su
