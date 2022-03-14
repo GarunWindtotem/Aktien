@@ -27,7 +27,7 @@ for key in dict_aktien:
     query_string = f'https://query1.finance.yahoo.com/v7/finance/download/{aktie}?period1={period1}&period2={period2}&interval={interval}&events=history&includeAdjustedClose=true'
 
     # function Dataframes
-    df, aktueller_Wert, rolling_window1, rolling_window2 = dataframes(query_string, EP_Aktie, n_aktie)
+    df, aktueller_Wert, rolling_window1, rolling_window2 = dataframes(query_string, EP_Aktie, n_aktie, today, bezeichnung_aktie)
 
     # function Diagramme
     diagramme(df, rolling_window1, rolling_window2, aktie, interval, today, Einstandswert, aktueller_Wert, bezeichnung_aktie)
