@@ -7,7 +7,7 @@ def dataframes(query_string, EP_Aktie, n_aktie, today, bezeichnung_aktie):
     df = pd.read_csv(query_string)
     df['Kurs'] = (1/2) * ( df["Low"]+df["High"])
     length = len(df["Kurs"])
-    print(f'length = 5%={int(length*0.05)}, 25%={int(length*0.25)}')
+    #print(f'length = 5%={int(length*0.05)}, 25%={int(length*0.25)}')
 
     rolling_window1 = int(length*0.10)
     rolling_window2 = int(length*0.25)
