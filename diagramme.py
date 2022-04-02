@@ -35,7 +35,7 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, inte
 
     # plt.fill_between(df["Date"], df["Kurs_mean_1"], df["Kurs_mean_2"], color='red', alpha=0.3,
     #     label=f'negativer Kurzzeittrend', interpolate=True, where=(df["Kurs_mean_1"] < df["Kurs_mean_2"]))
-
+    print(bool_EP)
     if bool_EP == True:
         plt.plot(df["Date"], df["Einstandspreis"], marker='', linestyle='-', alpha = 0.7,
             color="grey", linewidth=1.5, label = f'Einstandspreis', markersize=10)
@@ -54,8 +54,8 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, inte
     plt.title(f'{bezeichnung_aktie} {titel_beschreibung}\n', fontsize=40)
 
     if bool_EP == True:
-        plt.suptitle(f'{today} PW, Einstandswert = {Einstandswert} €, aktueller Wert = {aktueller_Wert} €', fontsize=25, y=0.92)
-    plt.suptitle(f'{today} PW', fontsize=25, y=0.92)
+        plt.suptitle(f'{today} PW, Einstand = {Einstandswert} €, Wert = {aktueller_Wert} €', fontsize=25, y=0.92)
+    else: plt.suptitle(f'{today} PW', fontsize=25, y=0.92)
 
     plt.xticks(fontsize=25, rotation=0)
     plt.yticks(fontsize=25)

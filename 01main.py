@@ -9,8 +9,7 @@ from daten import daten
 from settings import f_settings
 
 # Settings
-bool_EP = f_settings()
-print(bool_EP)
+bool_EP, bool_rolling = f_settings()
 
 titel_beschreibung = ""
 
