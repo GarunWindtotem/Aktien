@@ -24,7 +24,7 @@ def daten():
     # Einstandspreis
     dict_EP_aktien = {
         'LHA.DE': 6.379,
-        'H4ZJ.DE': 27.446,
+        'H4ZJ.DE': 27.446}
         # 'E127.MI': 47.942,
-        'BTC-EUR': 37_000}
+        # 'BTC-EUR': }
     return dict_aktien, dict_bezeichnung_aktien, dict_n_aktien, dict_EP_aktien
