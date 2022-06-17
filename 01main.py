@@ -9,7 +9,7 @@ from daten import daten
 from settings import f_settings
 
 # Settings
-bool_EP, bool_rolling = f_settings()
+# bool_EP, bool_rolling = f_settings()
 
 titel_beschreibung = ""
 
@@ -34,21 +34,20 @@ interval = '1d' # 1d, 1wk, 1m
 from datetime import date
 today = date.today().strftime("%d.%m.%Y")
 
-dict_aktien, dict_bezeichnung_aktien, dict_n_aktien, dict_EP_aktien = daten()
+dict_aktien, dict_bezeichnung_aktien = daten()
 
 # main loop
 for key in dict_aktien:
     aktie=dict_aktien[key]
-    n_aktie=dict_n_aktien[aktie]
-    EP_Aktie=dict_EP_aktien[aktie]
     bezeichnung_aktie = dict_bezeichnung_aktien[aktie]
-    Einstandswert = round(EP_Aktie * n_aktie, 1)
     query_string = f'https://query1.finance.yahoo.com/v7/finance/download/{aktie}?period1={period1}&period2={period2}&interval={interval}&events=history&includeAdjustedClose=true'
 
+    print(f'01main() bezeichnung_aktie= {bezeichnung_aktie}')
+
     # function Dataframes
-    df, aktueller_Wert, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, EP_Aktie, n_aktie, today, bezeichnung_aktie)
+    df, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, today, bezeichnung_aktie)
 
     # function Diagramme
-    diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, interval, today, Einstandswert, aktueller_Wert, bezeichnung_aktie, bool_EP, titel_beschreibung)
+    diagramme(df, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie)
 
 print('fertig')

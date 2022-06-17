@@ -1,7 +1,8 @@
 from matplotlib import pyplot as plt
 
-def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, interval, today, Einstandswert, aktueller_Wert, bezeichnung_aktie, bool_EP, titel_beschreibung):
+def diagramme(df, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie):
    
+    print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
     plt.figure(figsize=(24,9))
     plt.style.use('seaborn')
     plt.grid(True)
@@ -35,10 +36,6 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, inte
 
     # plt.fill_between(df["Date"], df["Kurs_mean_1"], df["Kurs_mean_2"], color='red', alpha=0.3,
     #     label=f'negativer Kurzzeittrend', interpolate=True, where=(df["Kurs_mean_1"] < df["Kurs_mean_2"]))
-    print(bool_EP)
-    if bool_EP == True:
-        plt.plot(df["Date"], df["Einstandspreis"], marker='', linestyle='-', alpha = 0.7,
-            color="grey", linewidth=1.5, label = f'Einstandspreis', markersize=10)
 
     plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='-', alpha=0.2,
         color="black", linewidth=3, label = "Tageskurs", markersize=15)
@@ -50,12 +47,8 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, inte
         ncol=3,
         fontsize=25)
 
-    # plt.title(f'Kurswert: {bezeichnung_aktie}, ({interval})\n', fontsize=25)
-    plt.title(f'{bezeichnung_aktie} {titel_beschreibung}\n', fontsize=40)
-
-    if bool_EP == True:
-        plt.suptitle(f'{today} PW, Einstand = {Einstandswert} €, Wert = {aktueller_Wert} €', fontsize=25, y=0.92)
-    else: plt.suptitle(f'{today} PW', fontsize=25, y=0.92)
+    plt.title(f'{bezeichnung_aktie}\n', fontsize=40)
+    plt.suptitle(f'{today} PW', fontsize=25, y=0.92)
 
     plt.xticks(fontsize=25, rotation=0)
     plt.yticks(fontsize=25)
@@ -63,5 +56,5 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, aktie, inte
     plt.ylabel("Euro", fontsize=35)
     plt.xlabel("Zeit", fontsize=35)
 
-    plt.savefig(f'D:\\Github\\Aktien\\Output\\{today} {bezeichnung_aktie} {titel_beschreibung}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'D:\\Github\\Aktien\\Output\\{today} {bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
     return
