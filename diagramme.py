@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 
 def diagramme(df, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie):
    
-    print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
+    # print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
     plt.figure(figsize=(24,9))
     plt.style.use('seaborn')
     plt.grid(True)

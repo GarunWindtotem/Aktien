@@ -3,20 +3,20 @@ import pandas as pd
 # import datetime as dt
 
 def dataframes(query_string, today, bezeichnung_aktie):
-    print(f'dataframes = {bezeichnung_aktie}')  # debug
+    # print(f'dataframes = {bezeichnung_aktie}')  # debug
     df = pd.read_csv(query_string)
     df['Kurs'] = (1/2) * ( df["Low"]+df["High"])
     length = len(df["Kurs"])
     #print(f'length = 5%={int(length*0.05)}, 25%={int(length*0.25)}')
 
-    rolling_window1 = int(length*0.10)
-    rolling_window2 = int(length*0.25)
-    rolling_window3 = int(length*0.50)
+    # rolling_window1 = int(length*0.10)
+    # rolling_window2 = int(length*0.25)
+    # rolling_window3 = int(length*0.50)
 
     # für michi
-    # rolling_window1 = 30
-    # rolling_window2 = 200
-    # rolling_window3 = 600
+    rolling_window1 = 30
+    rolling_window2 = 200
+    rolling_window3 = 600
 
     df['Kurs_mean_1'] = df['Kurs'].rolling(window=rolling_window1, min_periods=1, center=True).mean()
     df['Kurs_mean_2'] = df['Kurs'].rolling(window=rolling_window2, min_periods=1, center=True).mean()

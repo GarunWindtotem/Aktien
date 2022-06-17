@@ -11,11 +11,19 @@ from settings import f_settings
 # Settings
 # bool_EP, bool_rolling = f_settings()
 
-titel_beschreibung = ""
+from datetime import date
+today = date.today().strftime("%d.%m.%Y")
+
+
+
+current_year = date.today().year
+current_month = date.today().month
+current_day = date.today().day
+# print(f'{current_year} {current_month} {current_day}')
 
 # Datum Filter
-period1 = int(time.mktime(datetime.datetime(2021, 10, 1, 23, 59).timetuple()))
-period2 = int(time.mktime(datetime.datetime(2022, 12, 30, 23, 59).timetuple()))
+period1 = int(time.mktime(datetime.datetime(current_year-3, current_month, 1, 23, 59).timetuple()))
+period2 = int(time.mktime(datetime.datetime(current_year, current_month, current_day, 23, 59).timetuple()))
 
 # erstes bis zweites halving BTC
 # period1 = int(time.mktime(datetime.datetime(2014, 6, 30, 23, 59).timetuple()))
@@ -31,8 +39,7 @@ period2 = int(time.mktime(datetime.datetime(2022, 12, 30, 23, 59).timetuple()))
 
 interval = '1d' # 1d, 1wk, 1m 
 
-from datetime import date
-today = date.today().strftime("%d.%m.%Y")
+
 
 dict_aktien, dict_bezeichnung_aktien = daten()
 
