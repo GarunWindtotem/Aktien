@@ -56,5 +56,5 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, today, beze
     plt.ylabel("Euro", fontsize=35)
     plt.xlabel("Zeit", fontsize=35)
 
-    plt.savefig(f'D:\\Github\\Aktien\\Output\\{today} {bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'D:\\Github\\Aktien\\Output\\{bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
     return

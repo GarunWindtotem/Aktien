@@ -37,8 +37,9 @@ period2 = int(time.mktime(datetime.datetime(current_year, current_month, current
 # period1 = int(time.mktime(datetime.datetime(2020, 5, 11, 23, 59).timetuple()))
 # period2 = int(time.mktime(datetime.datetime(2024, 12, 31, 23, 59).timetuple()))
 
-interval = '1d' # 1d, 1wk, 1m 
-
+interval = '1d'
+# interval = '1wk'
+# interval = '1m'
 
 
 dict_aktien, dict_bezeichnung_aktien = daten()
