@@ -10,22 +10,22 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     # Wochentrend
     if bool_WochenTrend == True:
         plt.plot(df["Date"], df["Kurs_mean_0"], marker='', linestyle='-', alpha = 1,
-            color="grey", linewidth=3, label = f'Kurzzeittrend ({rolling_window0} Tage)', markersize=10)
+            color="grey", linewidth=3, label = f'weekly trend ({rolling_window0} days)', markersize=10)
 
     # Kurzzeittrend
     if bool_KurzzeitTrend == True:
         plt.plot(df["Date"], df["Kurs_mean_1"], marker='', linestyle='-', alpha = 1,
-            color="blue", linewidth=3, label = f'Kurzzeittrend ({rolling_window1} Tage)', markersize=10)
+            color="blue", linewidth=3, label = f'monthly trend ({rolling_window1} days)', markersize=10)
 
     # mittlerer Trend
     if bool_MittelTrend == True:
         plt.plot(df["Date"], df["Kurs_mean_2"], marker='', linestyle='-', alpha = 1,
-            color="orange", linewidth=4, label = f'mittlerer Trend ({rolling_window2} Tage)', markersize=10)
+            color="orange", linewidth=4, label = f'mid time trend ({rolling_window2} days)', markersize=10)
     
     # Langzeit Trend
     if bool_LangzeitTrend == True:
         plt.plot(df["Date"], df["Kurs_mean_3"], marker='', linestyle='-', alpha = 1,
-            color="black", linewidth=5, label = f'Langzeittrend ({rolling_window3} Tage)', markersize=10)
+            color="black", linewidth=5, label = f'long time trend ({rolling_window3} days)', markersize=10)
 
     # # std+
     # plt.plot(df["Date"], df["Kurs_std+"], marker='', linestyle='--', alpha = 0.3,
@@ -46,7 +46,7 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     #     label=f'negativer Kurzzeittrend', interpolate=True, where=(df["Kurs_mean_1"] < df["Kurs_mean_2"]))
 
     plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='', alpha=0.2,
-        color="black", linewidth=3, label = "Tageskurs", markersize=15)
+        color="black", linewidth=3, label = "daily value", markersize=15)
 
     plt.legend(loc='upper center',
         bbox_to_anchor=(0.5, -0.2),
