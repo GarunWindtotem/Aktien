@@ -1,23 +1,31 @@
 from matplotlib import pyplot as plt
 
-def diagramme(df, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie):
+def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend):
    
     # print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
     plt.figure(figsize=(24,9))
     plt.style.use('seaborn')
     plt.grid(True)
 
+    # Wochentrend
+    if bool_WochenTrend == True:
+        plt.plot(df["Date"], df["Kurs_mean_0"], marker='', linestyle='-', alpha = 1,
+            color="grey", linewidth=3, label = f'Kurzzeittrend ({rolling_window0} Tage)', markersize=10)
+
     # Kurzzeittrend
-    plt.plot(df["Date"], df["Kurs_mean_1"], marker='', linestyle='-', alpha = 1,
-        color="blue", linewidth=3, label = f'Kurzzeittrend ({rolling_window1} Tage)', markersize=10)
+    if bool_KurzzeitTrend == True:
+        plt.plot(df["Date"], df["Kurs_mean_1"], marker='', linestyle='-', alpha = 1,
+            color="blue", linewidth=3, label = f'Kurzzeittrend ({rolling_window1} Tage)', markersize=10)
 
     # mittlerer Trend
-    plt.plot(df["Date"], df["Kurs_mean_2"], marker='', linestyle='-', alpha = 1,
-        color="orange", linewidth=4, label = f'mittlerer Trend ({rolling_window2} Tage)', markersize=10)
+    if bool_MittelTrend == True:
+        plt.plot(df["Date"], df["Kurs_mean_2"], marker='', linestyle='-', alpha = 1,
+            color="orange", linewidth=4, label = f'mittlerer Trend ({rolling_window2} Tage)', markersize=10)
     
     # Langzeit Trend
-    plt.plot(df["Date"], df["Kurs_mean_3"], marker='', linestyle='-', alpha = 1,
-        color="black", linewidth=5, label = f'Langzeittrend ({rolling_window3} Tage)', markersize=10)
+    if bool_LangzeitTrend == True:
+        plt.plot(df["Date"], df["Kurs_mean_3"], marker='', linestyle='-', alpha = 1,
+            color="black", linewidth=5, label = f'Langzeittrend ({rolling_window3} Tage)', markersize=10)
 
     # # std+
     # plt.plot(df["Date"], df["Kurs_std+"], marker='', linestyle='--', alpha = 0.3,
@@ -37,7 +45,7 @@ def diagramme(df, rolling_window1, rolling_window2, rolling_window3, today, beze
     # plt.fill_between(df["Date"], df["Kurs_mean_1"], df["Kurs_mean_2"], color='red', alpha=0.3,
     #     label=f'negativer Kurzzeittrend', interpolate=True, where=(df["Kurs_mean_1"] < df["Kurs_mean_2"]))
 
-    plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='-', alpha=0.2,
+    plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='', alpha=0.2,
         color="black", linewidth=3, label = "Tageskurs", markersize=15)
 
     plt.legend(loc='upper center',

@@ -14,10 +14,12 @@ def dataframes(query_string, today, bezeichnung_aktie):
     # rolling_window3 = int(length*0.50)
 
     # für michi
+    rolling_window0 = 7
     rolling_window1 = 30
     rolling_window2 = 200
     rolling_window3 = 600
 
+    df['Kurs_mean_0'] = df['Kurs'].rolling(window=rolling_window0, min_periods=1, center=True).mean()
     df['Kurs_mean_1'] = df['Kurs'].rolling(window=rolling_window1, min_periods=1, center=True).mean()
     df['Kurs_mean_2'] = df['Kurs'].rolling(window=rolling_window2, min_periods=1, center=True).mean()
     df['Kurs_mean_3'] = df['Kurs'].rolling(window=rolling_window3, min_periods=1, center=True).mean()
@@ -35,5 +37,5 @@ def dataframes(query_string, today, bezeichnung_aktie):
     df['Date'] = df['Date'].dt.tz_localize(None)
     
     # df.to_csv(f'D:\\Github\\Aktien\\Output\\Daten\{today} {bezeichnung_aktie}.csv')
-    return df, rolling_window1, rolling_window2, rolling_window3
+    return df, rolling_window0, rolling_window1, rolling_window2, rolling_window3
 

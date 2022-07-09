@@ -21,8 +21,16 @@ current_month = date.today().month
 current_day = date.today().day
 # print(f'{current_year} {current_month} {current_day}')
 
+# Einstellungen
+bool_WochenTrend = True
+bool_KurzzeitTrend = True 
+bool_MittelTrend = True
+bool_LangzeitTrend = False
+AnzahlJahre = 1
+
+
 # Datum Filter
-period1 = int(time.mktime(datetime.datetime(current_year-3, current_month, 1, 23, 59).timetuple()))
+period1 = int(time.mktime(datetime.datetime(current_year-AnzahlJahre, current_month, 1, 23, 59).timetuple()))
 period2 = int(time.mktime(datetime.datetime(current_year, current_month, current_day, 23, 59).timetuple()))
 
 # erstes bis zweites halving BTC
@@ -53,9 +61,9 @@ for key in dict_aktien:
     print(f'01main() bezeichnung_aktie= {bezeichnung_aktie}')
 
     # function Dataframes
-    df, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, today, bezeichnung_aktie)
+    df, rolling_window0, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, today, bezeichnung_aktie)
 
     # function Diagramme
-    diagramme(df, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie)
+    diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend)
 
 print('fertig')
