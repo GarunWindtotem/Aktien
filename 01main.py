@@ -28,7 +28,7 @@ bool_WochenTrend = True
 bool_KurzzeitTrend = True 
 bool_MittelTrend = True
 bool_LangzeitTrend = False
-AnzahlJahre = 1
+AnzahlJahre = 7
 
 
 # Datum Filter
