@@ -7,6 +7,8 @@ from diagramme import diagramme
 from dataframes import dataframes
 from daten import daten
 from settings import f_settings
+from PDF import pdf_erstellen
+
 
 # Settings
 # bool_EP, bool_rolling = f_settings()
@@ -66,4 +68,6 @@ for key in dict_aktien:
     # function Diagramme
     diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend)
 
-print('fertig')
+pdf_erstellen()
+
+print('fertig :-)')
