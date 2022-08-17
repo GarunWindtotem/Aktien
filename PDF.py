@@ -12,7 +12,7 @@ def pdf_erstellen():
 
     for image in imagelist:
         pdf.add_page()
-        pdf.image(image,10,10,297, 210)
+        pdf.image(image,10,10,594, 420)
     pdf.output("D:\\Github\\Aktien\\Output\\yourfile.pdf", "F")
 
     print("fertig :D")
