@@ -4,20 +4,73 @@ def daten():
     dict_aktien = {
         '1': 'LHA.DE',
         '2': 'H4ZJ.DE',
-        '3': 'BTC-EUR',
-        '4': 'CL=F'
+        '3': 'TDIV.AS',
+        '4': 'ISPA.DE',
+        '5': 'GLDV.L',
+        '6': 'BTC-EUR',
+        '7': 'PAH3.F',
+        # '8': '9201.T',
+        # '9': 'IAG.L',
+        '10': 'RYA.IR',
+        '11': 'E127.DE',
+
+        # '7': 'CL=F'
         #'5': 'EURUSD=X',
        # '6': 'GC=F'
        }
 
     # Aktien Bezeichnung
     dict_bezeichnung_aktien = {
-        'LHA.DE': 'Lufthansa',
-        'H4ZJ.DE': 'HSBC MSCI World ETF',
-        'BTC-EUR': 'Bitcoin-EUR',
-        'CL=F': 'crude oil'
+        'LHA.DE': 'Aktie Lufthansa',
+        'H4ZJ.DE': 'ETF HSBC MSCI World',
+        'E127.DE': 'ETF Lyxor MSCI Emerging Markets',
+        'TDIV.AS': 'ETF VanEck Morningstar Developed Markets Dividend',
+        'ISPA.DE': 'ETF iShares STOXX Global Select Dividend 100 UCITS',
+        'GLDV.L': 'ETF SPDR S&P Global Dividend Aristocrats UCITS',
+        'BTC-EUR': 'Rohstoff Bitcoin-EUR',
+        'PAH3.F': 'Aktie Porsche Holding',
+        # '9201.T': 'Aktie Japan Cons. Airline',
+        # 'IAG.L': 'Aktie Internation Cons. Airline',
+        'RYA.IR': 'Aktie Ryanair Holding',
+        
+        # 'CL=F': 'crude oil'
       # 'EURUSD=X': 'EURO to USD',
       # 'GC=F': 'Gold'
         }
 
-    return dict_aktien, dict_bezeichnung_aktien
+    dict_y_aktien = {
+        'LHA.DE': 6.379,
+        'H4ZJ.DE': 27.023,
+        'TDIV.AS': 33.100,
+        'ISPA.DE': 28.497,
+        'GLDV.L': 31.265,
+        'BTC-EUR': 27041.9219,
+        'PAH3.F': 97.460,
+        # '9201.T': '',
+        # 'IAG.L': '',
+        'RYA.IR': 16.860,
+        'E127.DE': 47.942,
+        # 'CL=F': 'crude oil'
+      # 'EURUSD=X': 'EURO to USD',
+      # 'GC=F': 'Gold'
+        }
+
+    # Liste mit den Pfaden der 
+    image_paths = [
+        'D:\\Github\\Aktien\\Output\\Rohstoff Bitcoin-EUR.png', 
+        'D:\\Github\\Aktien\\Output\\ETF HSBC MSCI World.png',
+        'D:\\Github\\Aktien\\Output\\ETF Lyxor MSCI Emerging Markets.png',
+        # 'D:\\Github\\Aktien\\Output\\crude oil.png',
+        'D:\\Github\\Aktien\\Output\\ETF VanEck Morningstar Developed Markets Dividend.png',
+        'D:\\Github\\Aktien\\Output\\ETF iShares STOXX Global Select Dividend 100 UCITS.png',
+        'D:\\Github\\Aktien\\Output\\ETF SPDR S&P Global Dividend Aristocrats UCITS.png',
+        'D:\\Github\\Aktien\\Output\\Aktie Lufthansa.png',
+        'D:\\Github\\Aktien\\Output\\Aktie Ryanair Holding.png',
+        'D:\\Github\\Aktien\\Output\\Aktie Porsche Holding.png',
+        # 'D:\\Github\\Aktien\\Output\\Aktie Japan Cons. Airline.png',
+        # 'D:\\Github\\Aktien\\Output\\Aktie Internation Cons. Airline.png',
+        ]
+
+
+
+    return dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien

@@ -7,7 +7,7 @@ from diagramme import diagramme
 from dataframes import dataframes
 from daten import daten
 from settings import f_settings
-from PDF import pdf_erstellen
+# from PDF import pdf_erstellen
 from image import image_resize_append
 
 import sys
@@ -19,20 +19,13 @@ import subprocess
 from datetime import date
 today = date.today().strftime("%d.%m.%Y")
 
-
-
 current_year = date.today().year
 current_month = date.today().month
 current_day = date.today().day
 # print(f'{current_year} {current_month} {current_day}')
 
 # Einstellungen
-bool_WochenTrend = True
-bool_KurzzeitTrend = True 
-bool_MittelTrend = True
-bool_LangzeitTrend = False
-AnzahlJahre = 7
-
+AnzahlJahre, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, bool_costprice, bool_Streuung = f_settings()
 
 # Datum Filter
 period1 = int(time.mktime(datetime.datetime(current_year-AnzahlJahre, current_month, 1, 23, 59).timetuple()))
@@ -55,12 +48,13 @@ interval = '1d'
 # interval = '1m'
 
 
-dict_aktien, dict_bezeichnung_aktien = daten()
+dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien = daten()
 
 # main loop
 for key in dict_aktien:
     aktie=dict_aktien[key]
     bezeichnung_aktie = dict_bezeichnung_aktien[aktie]
+    y_aktie = dict_y_aktien[aktie]
     query_string = f'https://query1.finance.yahoo.com/v7/finance/download/{aktie}?period1={period1}&period2={period2}&interval={interval}&events=history&includeAdjustedClose=true'
 
     print(f'01main() bezeichnung_aktie= {bezeichnung_aktie}')
@@ -69,11 +63,11 @@ for key in dict_aktien:
     df, rolling_window0, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, today, bezeichnung_aktie)
 
     # function Diagramme
-    diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend)
+    diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre)
 
 # pdf_erstellen()
 
-image_resize_append()
+image_resize_append(image_paths)
 
 path = r'C:\Program Files (x86)\IronPython 2.7\Lib'
 sys.path.append(path)

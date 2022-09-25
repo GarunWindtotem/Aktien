@@ -1,15 +1,7 @@
 
-def image_resize_append():
+def image_resize_append(image_paths):
 
   from PIL import Image
-
-  image_paths = [
-      'D:\\Github\\Aktien\\Output\\Bitcoin-EUR.png', 
-      'D:\\Github\\Aktien\\Output\\HSBC MSCI World ETF.png',
-      'D:\\Github\\Aktien\\Output\\Lufthansa.png',
-      'D:\\Github\\Aktien\\Output\\crude oil.png'
-      ]
-
 
   images = [Image.open(x) for x in image_paths]
   widths, heights = zip(*(i.size for i in images))
@@ -35,7 +27,7 @@ def image_resize_append():
   y_offset = 0
   for im in images:
     new_im.paste(im, (0, y_offset))
-    y_offset += im.size[1] +42
+    y_offset += im.size[1] +5
 
   new_im.save('D:\\Github\\Aktien\\Output\\test.png')
   print("fertig :)")

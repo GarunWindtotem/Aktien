@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend):
+def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre):
    
     # print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
     plt.figure(figsize=(24,9))
@@ -35,8 +35,9 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     #     color="blue", linewidth=1, markersize=10)
 
     # FILL BETWEEN std
-    plt.fill_between(df["Date"], df["Kurs_std-"], df["Kurs_std+"], color='grey', alpha=0.2,
-        label=f'±1 sigma {rolling_window1}', interpolate=True)
+    if bool_Streuung == True:
+        plt.fill_between(df["Date"], df["Kurs_std-"], df["Kurs_std+"], color='grey', alpha=0.2,
+            label=f'±1 sigma {rolling_window1}', interpolate=True)
 
     # FILL BETWEEN rot/grün
     # plt.fill_between(df["Date"], df["Kurs_mean_1"], df["Kurs_mean_2"], color='green', alpha=0.3,
@@ -48,6 +49,9 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='', alpha=0.2,
         color="black", linewidth=3, label = "daily value", markersize=15)
 
+    if bool_costprice == True:
+        plt.axhline(y=y_aktie, color='red', linestyle='--', label='cost price')
+
     plt.legend(loc='upper center',
         bbox_to_anchor=(0.5, -0.2),
         fancybox=True,
@@ -55,7 +59,11 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
         ncol=3,
         fontsize=25)
 
-    plt.title(f'{bezeichnung_aktie}\n', fontsize=40)
+    # first_number = df["Kurs"].iloc[0]
+    einstandspreis = y_aktie
+    last_number = df["Kurs"].iloc[-1]
+    percent_change = round ( 100 * ((last_number / einstandspreis) -1), 1 )
+    plt.title(f'{bezeichnung_aktie} ({percent_change} %)\n', fontsize=40)
     plt.suptitle(f'{today} PW', fontsize=25, y=0.92)
 
     plt.xticks(fontsize=25, rotation=0)
@@ -65,4 +73,5 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     plt.xlabel("Zeit", fontsize=35)
 
     plt.savefig(f'D:\\Github\\Aktien\\Output\\{bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
+    
     return
