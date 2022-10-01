@@ -2,17 +2,17 @@ def daten():
 
     # Aktien Shortcuts
     dict_aktien = {
-        '1': 'LHA.DE',
-        '2': 'H4ZJ.DE',
-        '3': 'TDIV.AS',
-        '4': 'ISPA.DE',
-        '5': 'GLDV.L',
-        '6': 'BTC-EUR',
-        '7': 'PAH3.F',
+        '1': 'LHA.DE',      # Aktie Lufthansa
+        '2': 'H4ZJ.DE',     # ETF HSBC MSCI World
+        '3': 'TDIV.AS',     # ETF VanEck Morningstar Developed Markets Dividend
+        '4': 'ISPA.DE',     # ETF iShares STOXX Global Select Dividend 100 UCITS
+        '5': 'GLDV.L',      # ETF SPDR S&P Global Dividend Aristocrats UCITS
+        '6': 'BTC-EUR',     # Rohstoff Bitcoin-EUR
+       # '7': 'PAH3.F',
         # '8': '9201.T',
         # '9': 'IAG.L',
-        '10': 'RYA.IR',
-        '11': 'E127.DE',
+       # '10': 'RYA.IR',
+       # '11': 'E127.DE',
 
         # '7': 'CL=F'
         #'5': 'EURUSD=X',
@@ -28,28 +28,28 @@ def daten():
         'ISPA.DE': 'ETF iShares STOXX Global Select Dividend 100 UCITS',
         'GLDV.L': 'ETF SPDR S&P Global Dividend Aristocrats UCITS',
         'BTC-EUR': 'Rohstoff Bitcoin-EUR',
-        'PAH3.F': 'Aktie Porsche Holding',
+        #'PAH3.F': 'Aktie Porsche Holding',
         # '9201.T': 'Aktie Japan Cons. Airline',
         # 'IAG.L': 'Aktie Internation Cons. Airline',
-        'RYA.IR': 'Aktie Ryanair Holding',
+       # 'RYA.IR': 'Aktie Ryanair Holding',
         
         # 'CL=F': 'crude oil'
       # 'EURUSD=X': 'EURO to USD',
       # 'GC=F': 'Gold'
         }
-
+   
     dict_y_aktien = {
-        'LHA.DE': 6.379,
-        'H4ZJ.DE': 27.023,
-        'TDIV.AS': 33.100,
-        'ISPA.DE': 28.497,
-        'GLDV.L': 31.265,
-        'BTC-EUR': 27041.9219,
-        'PAH3.F': 97.460,
+        'LHA.DE': 6.379,        # Aktie Lufthansa
+        'H4ZJ.DE': 27.023,      # ETF HSBC MSCI World
+        'TDIV.AS': 33.100,      # ETF VanEck Morningstar Developed Markets Dividend
+        'ISPA.DE': 28.497,      # ETF iShares STOXX Global Select Dividend 100 UCITS
+        'GLDV.L': 31.265,       # ETF SPDR S&P Global Dividend Aristocrats UCITS
+        'BTC-EUR': 27041.9219,  # Rohstoff Bitcoin-EUR
+       # 'PAH3.F': 97.460,
         # '9201.T': '',
         # 'IAG.L': '',
-        'RYA.IR': 16.860,
-        'E127.DE': 47.942,
+       # 'RYA.IR': 16.860,
+       # 'E127.DE': 47.942,
         # 'CL=F': 'crude oil'
       # 'EURUSD=X': 'EURO to USD',
       # 'GC=F': 'Gold'
@@ -65,8 +65,8 @@ def daten():
         'D:\\Github\\Aktien\\Output\\ETF iShares STOXX Global Select Dividend 100 UCITS.png',
         'D:\\Github\\Aktien\\Output\\ETF SPDR S&P Global Dividend Aristocrats UCITS.png',
         'D:\\Github\\Aktien\\Output\\Aktie Lufthansa.png',
-        'D:\\Github\\Aktien\\Output\\Aktie Ryanair Holding.png',
-        'D:\\Github\\Aktien\\Output\\Aktie Porsche Holding.png',
+       # 'D:\\Github\\Aktien\\Output\\Aktie Ryanair Holding.png',
+       # 'D:\\Github\\Aktien\\Output\\Aktie Porsche Holding.png',
         # 'D:\\Github\\Aktien\\Output\\Aktie Japan Cons. Airline.png',
         # 'D:\\Github\\Aktien\\Output\\Aktie Internation Cons. Airline.png',
         ]
