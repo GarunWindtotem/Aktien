@@ -12,7 +12,7 @@ def daten():
         # '8': '9201.T',
         # '9': 'IAG.L',
        # '10': 'RYA.IR',
-       # '11': 'E127.DE',
+        '11': 'E127.DE',
 
         # '7': 'CL=F'
         #'5': 'EURUSD=X',
@@ -27,7 +27,7 @@ def daten():
         'TDIV.AS': 'ETF VanEck Morningstar Developed Markets Dividend',
         'ISPA.DE': 'ETF iShares STOXX Global Select Dividend 100 UCITS',
         'GLDV.L': 'ETF SPDR S&P Global Dividend Aristocrats UCITS',
-        'BTC-EUR': 'Rohstoff Bitcoin-EUR',
+        'BTC-EUR': 'Bitcoin-EUR',
         #'PAH3.F': 'Aktie Porsche Holding',
         # '9201.T': 'Aktie Japan Cons. Airline',
         # 'IAG.L': 'Aktie Internation Cons. Airline',
@@ -49,7 +49,7 @@ def daten():
         # '9201.T': '',
         # 'IAG.L': '',
        # 'RYA.IR': 16.860,
-       # 'E127.DE': 47.942,
+        'E127.DE': 47.942,
         # 'CL=F': 'crude oil'
       # 'EURUSD=X': 'EURO to USD',
       # 'GC=F': 'Gold'
@@ -57,7 +57,7 @@ def daten():
 
     # Liste mit den Pfaden der 
     image_paths = [
-        'D:\\Github\\Aktien\\Output\\Rohstoff Bitcoin-EUR.png', 
+        'D:\\Github\\Aktien\\Output\\Bitcoin-EUR.png', 
         'D:\\Github\\Aktien\\Output\\ETF HSBC MSCI World.png',
         'D:\\Github\\Aktien\\Output\\ETF Lyxor MSCI Emerging Markets.png',
         # 'D:\\Github\\Aktien\\Output\\crude oil.png',
