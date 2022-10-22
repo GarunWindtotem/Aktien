@@ -1,4 +1,6 @@
 from matplotlib import pyplot as plt
+import datetime as dt
+from datetime import date
 
 def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre):
    
@@ -49,14 +51,25 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     plt.plot(df["Date"], df["Kurs"], marker='.', linestyle='', alpha=0.2,
         color="black", linewidth=3, label = "daily value", markersize=15)
 
+    Hoch52Wochen = df["52wHoch"].iloc[-1]
+
     if bool_costprice == True:
         plt.axhline(y=y_aktie, color='red', linestyle='--', label='cost price')
+        plt.axhline(y=y_aktie*1.3, color='green', linestyle='--', label='target price')
+        plt.axhline(y=Hoch52Wochen, color='grey', linestyle='--', label='52 Wochen Hoch')
+
+        todays_date = date.today()
+        current_year = todays_date.year
+        current_month = todays_date.month
+        current_day = todays_date.day
+
+        plt.axvline(x=dt.datetime(current_year-1, current_month, current_day), color='grey', linestyle='--', label='')
 
     plt.legend(loc='upper center',
         bbox_to_anchor=(0.5, -0.2),
         fancybox=True,
         shadow=True,
-        ncol=3,
+        ncol=4,
         fontsize=25)
 
     # first_number = df["Kurs"].iloc[0]

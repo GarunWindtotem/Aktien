@@ -35,7 +35,8 @@ def dataframes(query_string, today, bezeichnung_aktie):
     # df["Steigung"] = df["Kurs_mean_1"] - df["Kurs_mean_1"].shift(periods=2)
     df['Date'] = pd.to_datetime(df.Date, utc=True)
     df['Date'] = df['Date'].dt.tz_localize(None)
-    
+    df["52wHoch"] = df["Kurs"].tail(52*5)
+    df["52wHoch"] = df["52wHoch"].max()
     # df.to_csv(f'D:\\Github\\Aktien\\Output\\Daten\{today} {bezeichnung_aktie}.csv')
     return df, rolling_window0, rolling_window1, rolling_window2, rolling_window3
 
