@@ -55,7 +55,7 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
 
     if bool_costprice == True:
         plt.axhline(y=y_aktie, color='red', linestyle='--', label='cost price')
-        plt.axhline(y=y_aktie*1.3, color='green', linestyle='--', label='target price')
+        plt.axhline(y=y_aktie*1.2, color='green', linestyle='--', label='target price')
         plt.axhline(y=Hoch52Wochen, color='grey', linestyle='--', label='52 Wochen Hoch')
 
         todays_date = date.today()
