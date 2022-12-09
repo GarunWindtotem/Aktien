@@ -1,5 +1,5 @@
 
-def image_resize_append(image_paths):
+def image_resize_append(image_paths, pfad_output):
 
   from PIL import Image
 
@@ -33,10 +33,9 @@ def image_resize_append(image_paths):
     new_im.paste(im, (0, y_offset))
     y_offset += im.size[1] + OffsetZwischenCharts
 
-  new_im.save('D:\\Github\\Aktien\\Output\\test.png')
+  new_im.save(f'{pfad_output}Zusammenfassung.png')
   print("fertig :)")
 
-  new_im = Image.open(r'D:\\Github\\Aktien\\Output\\test.png')
+  new_im = Image.open(f'{pfad_output}Zusammenfassung.png')
   im_1 = new_im.convert('RGB')
-  im_1.save(r'D:\\Github\\Aktien\\Output\\test.pdf')
-
+  im_1.save(f'{pfad_output}Zusammenfassung.pdf')

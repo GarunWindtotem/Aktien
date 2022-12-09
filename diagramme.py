@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 import datetime as dt
 from datetime import date
 
-def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre):
+def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3, today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre, pfad_output):
    
     # print(f'diagramme() bezeichnung_aktie= {bezeichnung_aktie}')
     plt.figure(figsize=(24,9))
@@ -85,6 +85,6 @@ def diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_win
     plt.ylabel("Euro", fontsize=35)
     plt.xlabel("Zeit", fontsize=35)
 
-    plt.savefig(f'D:\\Github\\Aktien\\Output\\{bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'{pfad_output}{bezeichnung_aktie}.png', dpi=300, bbox_inches='tight')
     
     return

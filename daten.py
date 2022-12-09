@@ -55,22 +55,23 @@ def daten():
       # 'GC=F': 'Gold'
         }
 
-    # Liste mit den Pfaden der 
+    # Liste mit den Pfaden der Output Daten
+    pfad_output= f'D:\\OneDrive\\Github Output\\Aktien\\'
     image_paths = [
-        'D:\\Github\\Aktien\\Output\\Bitcoin-EUR.png', 
-        'D:\\Github\\Aktien\\Output\\ETF HSBC MSCI World.png',
-        'D:\\Github\\Aktien\\Output\\ETF Lyxor MSCI Emerging Markets.png',
+        f'{pfad_output}Bitcoin-EUR.png', 
+        f'{pfad_output}ETF HSBC MSCI World.png',
+        f'{pfad_output}ETF Lyxor MSCI Emerging Markets.png',
         # 'D:\\Github\\Aktien\\Output\\crude oil.png',
-        'D:\\Github\\Aktien\\Output\\ETF VanEck Morningstar Developed Markets Dividend.png',
-        'D:\\Github\\Aktien\\Output\\ETF iShares STOXX Global Select Dividend 100 UCITS.png',
-        'D:\\Github\\Aktien\\Output\\ETF SPDR S&P Global Dividend Aristocrats UCITS.png',
-        'D:\\Github\\Aktien\\Output\\Aktie Lufthansa.png',
+        f'{pfad_output}ETF VanEck Morningstar Developed Markets Dividend.png',
+        f'{pfad_output}ETF iShares STOXX Global Select Dividend 100 UCITS.png',
+        f'{pfad_output}ETF SPDR S&P Global Dividend Aristocrats UCITS.png',
+        f'{pfad_output}Aktie Lufthansa.png',
        # 'D:\\Github\\Aktien\\Output\\Aktie Ryanair Holding.png',
        # 'D:\\Github\\Aktien\\Output\\Aktie Porsche Holding.png',
         # 'D:\\Github\\Aktien\\Output\\Aktie Japan Cons. Airline.png',
         # 'D:\\Github\\Aktien\\Output\\Aktie Internation Cons. Airline.png',
         ]
+     
 
 
-
-    return dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien
+    return dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien, pfad_output

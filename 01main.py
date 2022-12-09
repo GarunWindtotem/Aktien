@@ -48,7 +48,7 @@ interval = '1d'
 # interval = '1m'
 
 
-dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien = daten()
+dict_aktien, dict_bezeichnung_aktien, image_paths, dict_y_aktien, pfad_output = daten()
 
 # main loop
 for key in dict_aktien:
@@ -63,14 +63,14 @@ for key in dict_aktien:
     df, rolling_window0, rolling_window1, rolling_window2, rolling_window3 = dataframes(query_string, today, bezeichnung_aktie)
 
     # function Diagramme
-    diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre)
+    diagramme(df, rolling_window0, rolling_window1, rolling_window2, rolling_window3,today, bezeichnung_aktie, bool_WochenTrend, bool_KurzzeitTrend, bool_MittelTrend, bool_LangzeitTrend, y_aktie, bool_costprice, bool_Streuung, AnzahlJahre, pfad_output)
 
 # pdf_erstellen()
 
-image_resize_append(image_paths)
+image_resize_append(image_paths, pfad_output)
 
 path = r'C:\Program Files (x86)\IronPython 2.7\Lib'
 sys.path.append(path)
-subprocess.Popen('explorer "D:\Github\Aktien\Output"')
+subprocess.Popen('explorer "D:\OneDrive\Github Output"')
 
 print('fertig :-)')
