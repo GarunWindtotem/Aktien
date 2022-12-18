@@ -13,6 +13,7 @@ def daten():
         # '9': 'IAG.L',
        # '10': 'RYA.IR',
         '11': 'E127.DE',
+        '12': 'TSLA'
 
         # '7': 'CL=F'
         #'5': 'EURUSD=X',
@@ -28,6 +29,7 @@ def daten():
         'ISPA.DE': 'ETF iShares STOXX Global Select Dividend 100 UCITS',
         'GLDV.L': 'ETF SPDR S&P Global Dividend Aristocrats UCITS',
         'BTC-EUR': 'Bitcoin-EUR',
+        'TSLA': 'Aktie Tesla'
         #'PAH3.F': 'Aktie Porsche Holding',
         # '9201.T': 'Aktie Japan Cons. Airline',
         # 'IAG.L': 'Aktie Internation Cons. Airline',
@@ -53,6 +55,7 @@ def daten():
         # 'CL=F': 'crude oil'
       # 'EURUSD=X': 'EURO to USD',
       # 'GC=F': 'Gold'
+        'TSLA': 150
         }
 
     # Liste mit den Pfaden der Output Daten
@@ -66,6 +69,7 @@ def daten():
         f'{pfad_output}ETF iShares STOXX Global Select Dividend 100 UCITS.png',
         f'{pfad_output}ETF SPDR S&P Global Dividend Aristocrats UCITS.png',
         f'{pfad_output}Aktie Lufthansa.png',
+        f'{pfad_output}Aktie Tesla.png',
        # 'D:\\Github\\Aktien\\Output\\Aktie Ryanair Holding.png',
        # 'D:\\Github\\Aktien\\Output\\Aktie Porsche Holding.png',
         # 'D:\\Github\\Aktien\\Output\\Aktie Japan Cons. Airline.png',

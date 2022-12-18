@@ -1,6 +1,6 @@
 def f_settings():
 
-    AnzahlJahre = 2
+    AnzahlJahre = 1
     bool_WochenTrend = True
     bool_KurzzeitTrend = True 
     bool_MittelTrend = True
